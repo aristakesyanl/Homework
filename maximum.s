@@ -19,14 +19,14 @@ Reset_Handler:
 	//load array address to r1 register
 	LDRB r1,=array
 	//load first value of array to r0
-	//we will compare array value with r0
-	//and stor the biggest one
+	//will compare array value with r0
+	//and store the biggest one
 	LDRB r0,[r1]
 	LDR r3,=size
-	//stor array size in r2 
+	//store array size in r2 
 	LDR r2,[r3]
-	//push values of r1 and r2 so we can retriev them
-	//after finishing the execution of our function
+	//push values of r1 and r2 so we can retrieve them
+	//after finishing the execution of function
 	PUSH {r1,r2}
 	//branch with link
 	//go to max_value function
@@ -34,11 +34,11 @@ Reset_Handler:
 	BL max_value
 	//retrieve values of r1 and r2
 	POP  {r1,r2}
-	//go to end so we will jump the execution of max_value function once again
+	//go to end so we will jump the execution of max_value function
 	B end
 
 max_value:
-	//stor the values of elements in r3 register 
+	//store the values of elements in r3 register 
 	LDRB r3,[r1],#1
 	//compare them with r0
 	CMP r0,r3
@@ -47,7 +47,7 @@ max_value:
 
 greater:
 	MOV r0,r3
-	//check that we have reached the end of function
+	//check the end of function
 	SUB r2,#1
 	CMP r2, #0
 	BEQ end_max
