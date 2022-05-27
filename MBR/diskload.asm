@@ -32,7 +32,6 @@ sector_error:
     mov bx, SECTOR_ERROR
     call print
     call nl
-    jmp disk_loop
 
 disk_loop:
     jmp $
