@@ -8,4 +8,4 @@ jmp $
 
 %include "print.asm"
 
-message: db 'Program Loaded!!!',0
+message: db 'Program Loaded!!!', 0
