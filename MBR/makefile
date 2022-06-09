@@ -15,4 +15,5 @@ program.bin: program.asm
 
 clean:
 	rm run boot.bin mbr.bin program.bin
+	
 .PHONY: clean
