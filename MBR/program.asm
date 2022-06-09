@@ -11,6 +11,4 @@ jmp $
 
 message: db 'Program Loaded!!!',0
 
-jmp $ ; jump to current address = infinite loop
-
 times 512 - ($-$$) db 0
