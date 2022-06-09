@@ -1,11 +1,14 @@
-[bits 16]
-[org 0x9000]
-mov bx, message
-call print
-call print_nl
+mov ah, 0x0e ; tty mode
+mov al, 'H'
+int 0x10
+mov al, 'e'
+int 0x10
+mov al, 'l'
+int 0x10
+int 0x10 ; 'l' is still on al, remember?
+mov al, 'o'
+int 0x10
 
-jmp $
+jmp $ ; jump to current address = infinite loop
 
-%include "print.asm"
-
-message: db 'Program Loaded!!!', 0
+times 512 - ($-$$) db 0
