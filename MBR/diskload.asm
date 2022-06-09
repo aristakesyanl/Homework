@@ -4,7 +4,7 @@ disk_load:
 
     mov ah, 0x02 ; BIOS read sector function
     mov al, dh ; al<-the number of sectors to be read
-    mov cl, 0x02 ; cl <- sector (0x01 .. 0x11)
+    mov cl, 0x02 ; cl <- sector
                  ; 0x01 is our boot sector, 0x02 is the first 'available' sector
 
     mov ch, 0x00 ; ch <- cylinder 
