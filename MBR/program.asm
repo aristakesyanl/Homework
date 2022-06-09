@@ -1,14 +1,16 @@
-mov ah, 0x0e ; tty mode
-mov al, 'H'
-int 0x10
-mov al, 'e'
-int 0x10
-mov al, 'l'
-int 0x10
-int 0x10 ; 'l' is still on al
-mov al, 'o'
-int 0x10
+[bits 16]
+[org 0x9000]
 
-jmp $ ;
+mov bx, message
+call print
+call print_nl
+
+jmp $
+
+%include "print.asm"
+
+message: db 'Program Loaded!!!',0
+
+jmp $ ; jump to current address = infinite loop
 
 times 512 - ($-$$) db 0
