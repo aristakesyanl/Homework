@@ -40,7 +40,7 @@ int Test(FP arr[], int N){
 		return -2;
 	}
 
-	//copy arr to shared memory
+    //copy arr to shared memory
     memcpy(shmID,arr, sizeof(arr[0])*N);
 
     //for each function to test create a process
